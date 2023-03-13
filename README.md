@@ -3,3 +3,4 @@ DropdownMenu-SwiftUI is a SwiftUI project where we will build a beautiful dropdo
 - Smooth and Interruptible animations
 - Shareable options (menu items) between multiple menus that stay in sync
 - Nice visual slection indicator
+
