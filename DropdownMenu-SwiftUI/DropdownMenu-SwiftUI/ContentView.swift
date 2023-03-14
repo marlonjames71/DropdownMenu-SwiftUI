@@ -10,12 +10,18 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            ForEach(MenuItem.mockMenuItems) { item in
+                if let icon = item.iconName {
+                    Label(item.title, systemImage: icon)
+                } else {
+                    Text(item.title)
+                }
+            }
+            Spacer()
         }
         .padding()
+        .frame(maxWidth: .infinity)
+        .background(Color("BG-Primary").ignoresSafeArea())
     }
 }
 
