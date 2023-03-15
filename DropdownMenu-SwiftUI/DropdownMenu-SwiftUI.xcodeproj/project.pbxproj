@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37076D6729C0344300960770 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37076D6629C0344300960770 /* MenuItem.swift */; };
+		37076D6929C0394700960770 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37076D6829C0394700960770 /* DropdownMenu.swift */; };
 		37E6F25329BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */; };
 		37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6F25429BE9D7A0074937A /* ContentView.swift */; };
 		37E6F25729BE9D7B0074937A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E6F25629BE9D7B0074937A /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		37076D6629C0344300960770 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		37076D6829C0394700960770 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 		37E6F24F29BE9D7A0074937A /* DropdownMenu-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DropdownMenu-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu_SwiftUIApp.swift; sourceTree = "<group>"; };
 		37E6F25429BE9D7A0074937A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				37076D6629C0344300960770 /* MenuItem.swift */,
+				37076D6829C0394700960770 /* DropdownMenu.swift */,
 			);
 			path = "Dropdown Menu";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				37076D6729C0344300960770 /* MenuItem.swift in Sources */,
 				37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */,
 				37E6F25329BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift in Sources */,
+				37076D6929C0394700960770 /* DropdownMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
