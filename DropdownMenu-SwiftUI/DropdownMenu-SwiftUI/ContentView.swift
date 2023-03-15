@@ -10,13 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            ForEach(MenuItem.mockMenuItems) { item in
-                if let icon = item.iconName {
-                    Label(item.title, systemImage: icon)
-                } else {
-                    Text(item.title)
-                }
-            }
+            DropdownMenu(menuItems: MenuItem.mockMenuItems)
             Spacer()
         }
         .padding()

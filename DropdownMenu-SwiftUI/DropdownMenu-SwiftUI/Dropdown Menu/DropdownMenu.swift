@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DropdownMenu: View {
+    
+    let menuItems: [MenuItem]
+    
     @State private var expanded = false
     
     var body: some View {
@@ -24,7 +27,7 @@ struct DropdownMenu: View {
             }
             
             if expanded {
-                ForEach(MenuItem.mockMenuItems) { item in
+                ForEach(menuItems) { item in
                     Text(item.title)
                 }
             }
@@ -36,6 +39,6 @@ struct DropdownMenu: View {
 
 struct DropdownMenu_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownMenu()
+        DropdownMenu(menuItems: MenuItem.mockMenuItems)
     }
 }
