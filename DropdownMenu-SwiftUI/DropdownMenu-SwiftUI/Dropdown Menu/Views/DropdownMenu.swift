@@ -12,27 +12,42 @@ struct DropdownMenu: View {
     let menuItems: [MenuItem]
     
     @State private var expanded = false
+    @State private var selectedItem: MenuItem?
     
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("Choose an option")
+                if let selectedItem {
+                    Text(selectedItem.title)
+                } else {
+                    Text("Choose an option")
+                }
                 Spacer()
                 Image(systemName: "chevron.down")
                     .rotationEffect(.degrees(expanded ? -180 : 0))
             }
+            .padding(.vertical)
+            .padding(.horizontal, 16)
+            .border(.red)
             .contentShape(Rectangle())
             .onTapGesture {
-                withAnimation { expanded.toggle() }
+                withAnimation(.spring()) { expanded.toggle() }
             }
             
             if expanded {
-                ForEach(menuItems) { item in
-                    Text(item.title)
+                VStack(spacing: 3) {
+                    ForEach(menuItems) { item in
+                        MenuItemRow(item: item, selectedItem: $selectedItem)
+                    }
                 }
+                .padding(.vertical, 6)
             }
         }
-        .padding()
+        .onChange(of: selectedItem) { _ in
+            withAnimation(.spring()) {
+                expanded.toggle()
+            }
+        }
         .border(.red)
     }
 }

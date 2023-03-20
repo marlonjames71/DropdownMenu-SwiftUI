@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		37076D6729C0344300960770 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37076D6629C0344300960770 /* MenuItem.swift */; };
 		37076D6929C0394700960770 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37076D6829C0394700960770 /* DropdownMenu.swift */; };
+		3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */; };
+		3788FCA929C7F63E00E7C083 /* MenuItemRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */; };
+		3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */; };
 		37E6F25329BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */; };
 		37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6F25429BE9D7A0074937A /* ContentView.swift */; };
 		37E6F25729BE9D7B0074937A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E6F25629BE9D7B0074937A /* Assets.xcassets */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		37076D6629C0344300960770 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		37076D6829C0394700960770 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
+		3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
+		3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRowButtonStyle.swift; sourceTree = "<group>"; };
+		3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionHighlight.swift; sourceTree = "<group>"; };
 		37E6F24F29BE9D7A0074937A /* DropdownMenu-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DropdownMenu-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu_SwiftUIApp.swift; sourceTree = "<group>"; };
 		37E6F25429BE9D7A0074937A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,10 +84,37 @@
 		37076D6529C0333E00960770 /* Dropdown Menu */ = {
 			isa = PBXGroup;
 			children = (
-				37076D6629C0344300960770 /* MenuItem.swift */,
-				37076D6829C0394700960770 /* DropdownMenu.swift */,
+				3788FCA329C7F5C900E7C083 /* Models */,
+				3788FCA529C7F5E400E7C083 /* Modifiers & Styles */,
+				3788FCA429C7F5D600E7C083 /* Views */,
 			);
 			path = "Dropdown Menu";
+			sourceTree = "<group>";
+		};
+		3788FCA329C7F5C900E7C083 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37076D6629C0344300960770 /* MenuItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3788FCA429C7F5D600E7C083 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37076D6829C0394700960770 /* DropdownMenu.swift */,
+				3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */,
+				3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3788FCA529C7F5E400E7C083 /* Modifiers & Styles */ = {
+			isa = PBXGroup;
+			children = (
+				3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */,
+			);
+			path = "Modifiers & Styles";
 			sourceTree = "<group>";
 		};
 		37E6F24629BE9D7A0074937A = {
@@ -107,10 +140,10 @@
 		37E6F25129BE9D7A0074937A /* DropdownMenu-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */,
 				37E6F25429BE9D7A0074937A /* ContentView.swift */,
-				37076D6529C0333E00960770 /* Dropdown Menu */,
+				37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */,
 				37E6F25629BE9D7B0074937A /* Assets.xcassets */,
+				37076D6529C0333E00960770 /* Dropdown Menu */,
 				37E6F25829BE9D7B0074937A /* Preview Content */,
 			);
 			path = "DropdownMenu-SwiftUI";
@@ -271,8 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3788FCA929C7F63E00E7C083 /* MenuItemRowButtonStyle.swift in Sources */,
 				37076D6729C0344300960770 /* MenuItem.swift in Sources */,
+				3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */,
 				37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */,
+				3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */,
 				37E6F25329BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift in Sources */,
 				37076D6929C0394700960770 /* DropdownMenu.swift in Sources */,
 			);
