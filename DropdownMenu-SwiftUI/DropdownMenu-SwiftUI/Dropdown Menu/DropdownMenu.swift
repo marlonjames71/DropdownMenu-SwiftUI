@@ -18,8 +18,8 @@ struct DropdownMenu: View {
             HStack {
                 Text("Choose an option")
                 Spacer()
-                Image(systemName: "chevron.right")
-                    .rotationEffect(.degrees(expanded ? 90 : 0))
+                Image(systemName: "chevron.down")
+                    .rotationEffect(.degrees(expanded ? -180 : 0))
             }
             .contentShape(Rectangle())
             .onTapGesture {
