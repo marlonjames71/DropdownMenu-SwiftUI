@@ -131,6 +131,22 @@ struct DropdownMenu: View {
     }
 }
 
+// MARK: - Library Content
+
+struct DropdownMenuLibraryContent: LibraryContentProvider {
+    @LibraryContentBuilder
+    public var views: [LibraryItem] {
+        LibraryItem(
+            DropdownMenu(
+                menuItems: MenuItem.mockMenuItems,
+                selectedItem: .constant(nil)
+            ),
+            title: "Dropdown Menu",
+            category: .control
+        )
+    }
+}
+
 // MARK: - Preview
 
 struct DropdownMenu_Previews: PreviewProvider {
