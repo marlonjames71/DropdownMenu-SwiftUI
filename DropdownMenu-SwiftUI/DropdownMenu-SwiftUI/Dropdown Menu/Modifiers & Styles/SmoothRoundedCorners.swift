@@ -22,7 +22,7 @@ struct CornerRadius: ViewModifier {
 }
 
 extension View {
-    func smootheRoundedCorners(_ cornerRadius: CGFloat = 10.0) -> some View {
+    func smoothRoundedCorners(_ cornerRadius: CGFloat = 10.0) -> some View {
         modifier(CornerRadius(cornerRadius, style: .continuous))
     }
     

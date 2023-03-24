@@ -38,7 +38,7 @@ struct MenuTitleView: View {
     // MARK: - Views
     
     private var clearSelectionButton: some View {
-        Button(action: clearnSelection) {
+        Button(action: clearSelection) {
             Text("Clear")
                 .font(.caption)
                 .foregroundColor(.primary)
@@ -48,7 +48,7 @@ struct MenuTitleView: View {
     
     // MARK: - Helper Methods
     
-    private func clearnSelection() {
+    private func clearSelection() {
         guard selectedItem != nil else { return }
         withAnimation(.spring()) { selectedItem = nil }
     }

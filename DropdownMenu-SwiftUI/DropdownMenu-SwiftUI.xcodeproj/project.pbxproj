@@ -13,6 +13,7 @@
 		3759A58C29CD622000E888F2 /* MenuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A58B29CD622000E888F2 /* MenuTitleView.swift */; };
 		3759A58F29CD7CE600E888F2 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A58E29CD7CE600E888F2 /* Color+.swift */; };
 		3759A59129CD7E9200E888F2 /* SmoothRoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A59029CD7E9200E888F2 /* SmoothRoundedCorners.swift */; };
+		3759A59329CD981300E888F2 /* View+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A59229CD981300E888F2 /* View+ScrollView.swift */; };
 		3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */; };
 		3788FCA929C7F63E00E7C083 /* MenuItemRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */; };
 		3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */; };
@@ -49,6 +50,7 @@
 		3759A58B29CD622000E888F2 /* MenuTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTitleView.swift; sourceTree = "<group>"; };
 		3759A58E29CD7CE600E888F2 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		3759A59029CD7E9200E888F2 /* SmoothRoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothRoundedCorners.swift; sourceTree = "<group>"; };
+		3759A59229CD981300E888F2 /* View+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ScrollView.swift"; sourceTree = "<group>"; };
 		3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRowButtonStyle.swift; sourceTree = "<group>"; };
 		3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionHighlight.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3759A58E29CD7CE600E888F2 /* Color+.swift */,
+				3759A59229CD981300E888F2 /* View+ScrollView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				3759A58F29CD7CE600E888F2 /* Color+.swift in Sources */,
 				37076D6729C0344300960770 /* MenuItem.swift in Sources */,
 				3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */,
+				3759A59329CD981300E888F2 /* View+ScrollView.swift in Sources */,
 				3759A59129CD7E9200E888F2 /* SmoothRoundedCorners.swift in Sources */,
 				37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */,
 				3759A58C29CD622000E888F2 /* MenuTitleView.swift in Sources */,
