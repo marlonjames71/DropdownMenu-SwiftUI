@@ -69,26 +69,33 @@ struct DropdownMenu: View {
                 
                 if expanded {
                     Divider()
-                    ScrollViewReader { proxy in
-                        VStack(spacing: 3) {
-                            ForEach(validMenuItems) { item in
-                                MenuItemRow(item: item, selectedItem: $selectedItem)
-                                    .tag(item.id)
+                    if validMenuItems.isEmpty {
+                        Text("No other options available")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .padding(.vertical, 6)
+                    } else {
+                        ScrollViewReader { proxy in
+                            VStack(spacing: 3) {
+                                ForEach(validMenuItems) { item in
+                                    MenuItemRow(item: item, selectedItem: $selectedItem)
+                                        .tag(item.id)
+                                }
+                                .onAppear {
+                                    proxy.scrollTo(selectedItem?.id ?? .init())
+                                }
                             }
-                            .onAppear {
-                                proxy.scrollTo(selectedItem?.id ?? .init())
-                            }
-                        }
-                        .padding(.vertical, 6)
-                        .embedInScrollView(validMenuItems.count > 4)
-                        .frame(maxHeight: validMenuItems.count < 5 ? nil : 310)
-                        .onChange(of: selectedItem) { item in
-                            // Completely optional
-                            guard expanded, scrollToTopOnClear else { return }
-                            if item == nil {
-                                if let first = validMenuItems.first {
-                                    withAnimation {
-                                        proxy.scrollTo(first.id)
+                            .padding(.vertical, 6)
+                            .embedInScrollView(validMenuItems.count > 4)
+                            .frame(maxHeight: validMenuItems.count < 5 ? nil : 310)
+                            .onChange(of: selectedItem) { item in
+                                // Completely optional
+                                guard expanded, scrollToTopOnClear else { return }
+                                if item == nil {
+                                    if let first = validMenuItems.first {
+                                        withAnimation {
+                                            proxy.scrollTo(first.id)
+                                        }
                                     }
                                 }
                             }
