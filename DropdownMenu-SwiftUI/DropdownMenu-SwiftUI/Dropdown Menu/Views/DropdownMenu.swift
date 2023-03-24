@@ -44,7 +44,11 @@ struct DropdownMenu: View {
             }
         }
         .onChange(of: selectedItem) { _ in
-            withAnimation(.spring()) {
+            withAnimation(.spring(
+                response: 0.4,
+                dampingFraction: 1.0,
+                blendDuration: 0.8
+            )) {
                 expanded.toggle()
             }
         }
