@@ -55,6 +55,10 @@ struct DropdownMenu: View {
                     .padding(.vertical, 6)
                 }
             }
+            .ignoresSafeArea(.keyboard, edges: .all)
+            .background(Color.bgSecondary)
+            .smootheRoundedCorners(expanded ? 16 : 12)
+            .shadow(color: Color.black.opacity(0.10), radius: 4, x: 0.0, y: 2.0)
             .onChange(of: selectedItem) { _ in
                 withAnimation(.spring(
                     response: 0.4,
@@ -66,7 +70,6 @@ struct DropdownMenu: View {
                 }
             }
         }
-        .border(.red)
     }
 }
 

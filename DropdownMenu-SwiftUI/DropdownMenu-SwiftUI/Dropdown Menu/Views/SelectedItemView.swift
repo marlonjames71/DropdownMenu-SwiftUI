@@ -69,7 +69,6 @@ struct SelectedItemView: View {
                 expanded.toggle()
             }
         }
-        .border(.red)
     }
     
     // MARK: - Views
