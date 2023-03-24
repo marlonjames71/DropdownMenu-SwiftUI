@@ -12,10 +12,11 @@ struct MenuItemRow: View {
     let item: MenuItem
     @Binding var selectedItem: MenuItem?
     
+    // MARK: - Body
+    
     var body: some View {
         Button {
-            guard selectedItem != item else { return }
-            selectedItem = item
+            setSelectedItem()
         } label: {
             HStack(alignment: .firstTextBaseline, spacing: 8) {
                 if let iconName = item.iconName {
@@ -36,6 +37,8 @@ struct MenuItemRow: View {
         .buttonStyle(MenuItemRowButtonStyle())
     }
     
+    // MARK: - Views
+    
     private func foregroundColor(normalColor: Color = .primary) -> Color {
         item == selectedItem ? .white : normalColor
     }
@@ -46,7 +49,18 @@ struct MenuItemRow: View {
             SelectionHighlight(color: .orange, style: .normal)
         }
     }
+    
+    // MARK: - Helper Methods
+    
+    private func setSelectedItem() {
+        withAnimation(.spring()) {
+            guard selectedItem != item else { return }
+            selectedItem = item
+        }
+    }
 }
+
+// MARK: - Preview
 
 struct MenuItemRow_Previews: PreviewProvider {
     static var previews: some View {

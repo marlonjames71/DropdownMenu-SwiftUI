@@ -16,23 +16,11 @@ struct DropdownMenu: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                if let selectedItem {
-                    Text(selectedItem.title)
-                } else {
-                    Text("Choose an option")
-                }
-                Spacer()
-                Image(systemName: "chevron.down")
-                    .rotationEffect(.degrees(expanded ? -180 : 0))
-            }
-            .padding(.vertical)
-            .padding(.horizontal, 16)
-            .border(.red)
-            .contentShape(Rectangle())
-            .onTapGesture {
-                withAnimation(.spring()) { expanded.toggle() }
-            }
+            SelectedItemView(
+                expanded: $expanded,
+                selectedItem: $selectedItem,
+                placeholder: "Choose a security question"
+            )
             
             if expanded {
                 VStack(spacing: 3) {

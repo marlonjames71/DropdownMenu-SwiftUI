@@ -29,6 +29,9 @@ extension MenuItem {
         ]
     }
     
-    static let mockMenuItem: Self = .init(title: "What is your favorite place to travel?", iconName: "airplane")
+    static let mockMenuItem: Self = .init(
+        title: "What is your favorite place to travel?",
+        iconName: "airplane.departure"
+    )
 }
 #endif

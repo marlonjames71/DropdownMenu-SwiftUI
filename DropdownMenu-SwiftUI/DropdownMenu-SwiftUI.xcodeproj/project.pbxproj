@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37076D6729C0344300960770 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37076D6629C0344300960770 /* MenuItem.swift */; };
 		37076D6929C0394700960770 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37076D6829C0394700960770 /* DropdownMenu.swift */; };
+		3759A58A29CD4BA800E888F2 /* SelectedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A58929CD4BA800E888F2 /* SelectedItemView.swift */; };
 		3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */; };
 		3788FCA929C7F63E00E7C083 /* MenuItemRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */; };
 		3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		37076D6629C0344300960770 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		37076D6829C0394700960770 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
+		3759A58929CD4BA800E888F2 /* SelectedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemView.swift; sourceTree = "<group>"; };
 		3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRowButtonStyle.swift; sourceTree = "<group>"; };
 		3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionHighlight.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				37076D6829C0394700960770 /* DropdownMenu.swift */,
 				3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */,
 				3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */,
+				3759A58929CD4BA800E888F2 /* SelectedItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				37076D6729C0344300960770 /* MenuItem.swift in Sources */,
 				3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */,
 				37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */,
+				3759A58A29CD4BA800E888F2 /* SelectedItemView.swift in Sources */,
 				3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */,
 				37E6F25329BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift in Sources */,
 				37076D6929C0394700960770 /* DropdownMenu.swift in Sources */,
