@@ -22,7 +22,7 @@ struct ContentView: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Color("BG-Primary").ignoresSafeArea())
+        .background(Color.bgPrimary.ignoresSafeArea())
     }
 }
 

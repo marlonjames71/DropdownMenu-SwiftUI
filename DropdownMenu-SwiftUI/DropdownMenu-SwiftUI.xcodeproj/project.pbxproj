@@ -11,6 +11,7 @@
 		37076D6929C0394700960770 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37076D6829C0394700960770 /* DropdownMenu.swift */; };
 		3759A58A29CD4BA800E888F2 /* SelectedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A58929CD4BA800E888F2 /* SelectedItemView.swift */; };
 		3759A58C29CD622000E888F2 /* MenuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A58B29CD622000E888F2 /* MenuTitleView.swift */; };
+		3759A58F29CD7CE600E888F2 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759A58E29CD7CE600E888F2 /* Color+.swift */; };
 		3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */; };
 		3788FCA929C7F63E00E7C083 /* MenuItemRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */; };
 		3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */; };
@@ -45,6 +46,7 @@
 		37076D6829C0394700960770 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 		3759A58929CD4BA800E888F2 /* SelectedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemView.swift; sourceTree = "<group>"; };
 		3759A58B29CD622000E888F2 /* MenuTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTitleView.swift; sourceTree = "<group>"; };
+		3759A58E29CD7CE600E888F2 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRowButtonStyle.swift; sourceTree = "<group>"; };
 		3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionHighlight.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 				3788FCA429C7F5D600E7C083 /* Views */,
 			);
 			path = "Dropdown Menu";
+			sourceTree = "<group>";
+		};
+		3759A58D29CD7CBE00E888F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3759A58E29CD7CE600E888F2 /* Color+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3788FCA329C7F5C900E7C083 /* Models */ = {
@@ -150,6 +160,7 @@
 				37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */,
 				37E6F25629BE9D7B0074937A /* Assets.xcassets */,
 				37076D6529C0333E00960770 /* Dropdown Menu */,
+				3759A58D29CD7CBE00E888F2 /* Extensions */,
 				37E6F25829BE9D7B0074937A /* Preview Content */,
 			);
 			path = "DropdownMenu-SwiftUI";
@@ -311,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3788FCA929C7F63E00E7C083 /* MenuItemRowButtonStyle.swift in Sources */,
+				3759A58F29CD7CE600E888F2 /* Color+.swift in Sources */,
 				37076D6729C0344300960770 /* MenuItem.swift in Sources */,
 				3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */,
 				37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */,
