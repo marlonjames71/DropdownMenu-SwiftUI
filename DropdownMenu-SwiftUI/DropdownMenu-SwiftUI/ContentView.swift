@@ -8,9 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var securityQ1: MenuItem? = nil
-    @State private var securityQ2: MenuItem? = nil
-    @State private var securityQ3: MenuItem? = nil
+    @State private var option1: MenuItem? = nil
+    @State private var option2: MenuItem? = nil
+    @State private var option3: MenuItem? = nil
+    
+    let notifications: [MenuItem] = [
+        .init(
+            title: "Watching",
+            subtext: "You will be notified of every new reply in this topic, and a count of new replies will be shown.",
+            iconName: "bell.badge.fill",
+            tint: .iconBlue
+        ),
+        .init(
+            title: "Tracking",
+            subtext: "A count of new replies will be shown for this topic. You will be notified if someone mentions your @name or replies to you.",
+            iconName: "bell.fill",
+            tint: .iconPink
+        ),
+        .init(
+            title: "Normal",
+            subtext: "You will be notified if someone mentions your @name or replies to you.",
+            iconName: "bell",
+            tint: .textSecondary
+        ),
+        .init(
+            title: "Muted",
+            subtext: "You will never be notified of anything about this topic, and it will not appear in latest.",
+            iconName: "bell.slash",
+            tint: .textSecondary
+        )
+    ]
     
     let hobbyCategories: [MenuItem] = [
         .init(title: "Listening to Music", iconName: "headphones"),
@@ -41,37 +68,41 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 12) {
+                VStack(spacing: 24) {
                     DropdownMenu(
-                        title: "Hobby 1",
-                        menuItems: hobbyCategories,
-                        selectedItem: $securityQ1,
+                        title: "Notification for Topics",
+                        placeholder: "Choose notification type",
+                        menuItems: notifications,
+//                        menuItems: hobbyCategories,
+                        selectedItem: $option1,
                         excludedItems:
-                            securityQ2,
-                            securityQ3
+                            option2,
+                            option3
                     )
                     .iconTint(.iconGreen)
                     
-//                    DropdownMenu(
-//                        title: "Hobby 2",
-//                        menuItems: hobbyCategories,
-//                        selectedItem: $securityQ2,
-//                        excludedItems:
-//                            securityQ1,
-//                            securityQ3
-//                    )
-//                    .iconTint(.iconBlue)
-                    
-                    DropdownMenu(menuItems: hobbyCategories, selectedItem: $securityQ2)
-                    
                     DropdownMenu(
-                        title: "Hobby 3",
-                        menuItems: hobbyCategories,
-                        selectedItem: $securityQ3,
+                        title: "Notification for Categories",
+                        placeholder: "Choose notification type",
+                        menuItems: notifications,
+//                        menuItems: hobbyCategories,
+                        selectedItem: $option2,
                         excludedItems:
-                            securityQ1,
-                            securityQ2
-//                            securityQ3
+                            option1,
+                            option3
+                    )
+                    .iconTint(.iconBlue)
+                                        
+                    DropdownMenu(
+                        title: "Notification for Groups",
+                        placeholder: "Choose notification type",
+                        menuItems: notifications,
+//                        menuItems: hobbyCategories,
+                        selectedItem: $option3,
+                        excludedItems:
+                            option1,
+                            option2
+//                            option3
                     )
                     .iconTint(.iconPink)
                     
@@ -79,7 +110,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Hobbies")
+            .navigationTitle("Settings")
             .background(Color.bgPrimary.ignoresSafeArea())
         }
     }

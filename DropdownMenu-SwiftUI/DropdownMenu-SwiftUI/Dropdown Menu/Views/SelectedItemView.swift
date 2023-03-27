@@ -34,33 +34,38 @@ struct SelectedItemView: View {
     // MARK: - Body
     
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
+        HStack(alignment: .top, spacing: 8) {
             if let selectedItem {
                 if let iconName = selectedItem.iconName {
                     Image(systemName: iconName)
                         .font(.body)
+                        .fontWeight(.light)
                         .frame(width: 30)
-                        .foregroundColor(iconTint)
+                        .foregroundColor(iconColor)
                         .aspectRatio(1.0, contentMode: .fit)
                         .fixedSize(horizontal: true, vertical: true)
                         .transition(.opacity)
                 }
             
                 Text(selectedItem.title)
+                    .fontDesign(.rounded)
                     .multilineTextAlignment(.leading)
                     .lineLimit(3)
                     .fixedSize(horizontal: false, vertical: true)
-                    .transition(.move(edge: .trailing).combined(with: .opacity))
+                    .transition(placeholder.isEmpty ? .opacity : .move(edge: .trailing).combined(with: .opacity))
             } else {
                 placeholderText
+                    .frame(minHeight: 20)
             }
             
             Spacer()
             
             Image(systemName: "chevron.down")
+                .frame(height: 20)
                 .rotationEffect(.degrees(expanded ? -180 : 0))
                 .font(.footnote)
                 .foregroundColor(.primary)
+                
         }
         .padding(.all, 16)
         .contentShape(Rectangle())
@@ -79,10 +84,21 @@ struct SelectedItemView: View {
     
     private var placeholderText: some View {
         Text(placeholder)
+            .fontDesign(.rounded)
             .foregroundColor(.secondary)
             .multilineTextAlignment(.leading)
             .fixedSize(horizontal: false, vertical: true)
             .transition(.move(edge: .leading).combined(with: .opacity))
+    }
+    
+    // MARK: - Helpers
+    
+    private var iconColor: Color {
+        if let tint = selectedItem?.tint {
+            return tint
+        } else {
+            return iconTint
+        }
     }
 }
 

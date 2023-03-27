@@ -5,17 +5,33 @@
 //  Created by Marlon Raskin on 3/14/23.
 //
 
-import Foundation
+import SwiftUI
 
 struct MenuItem: Identifiable, Equatable {
     var id: UUID
     let title: String
+    let subtext: String?
     let iconName: String?
+    let tint: Color?
     
-    init(id: UUID = UUID(), title: String, iconName: String? = nil) {
+    init(
+        id: UUID = UUID(),
+        title: String,
+        subtext: String? = nil,
+        iconName: String? = nil,
+        tint: Color? = nil
+    ) {
         self.id = id
         self.title = title
+        self.subtext = subtext
         self.iconName = iconName
+        self.tint = tint
+    }
+}
+
+extension MenuItem {
+    var hasSubtext: Bool {
+        subtext != nil
     }
 }
 

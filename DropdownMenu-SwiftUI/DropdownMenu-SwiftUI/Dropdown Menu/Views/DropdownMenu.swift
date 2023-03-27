@@ -10,6 +10,7 @@ import SwiftUI
 struct DropdownMenu: View {
     
     let title: String?
+    let placeholder: String?
     let menuItems: [MenuItem]
     
     @State private var expanded = false
@@ -23,6 +24,7 @@ struct DropdownMenu: View {
     
     init(
         title: String? = nil,
+        placeholder: String?,
         menuItems: [MenuItem],
         selectedItem: Binding<MenuItem?>,
         showClearButton: Bool = true,
@@ -30,6 +32,7 @@ struct DropdownMenu: View {
         excludedItems: MenuItem?...
     ) {
         self.title = title
+        self.placeholder = placeholder
         self.menuItems = menuItems
         self._selectedItem = selectedItem
         self.showClearButton = showClearButton
@@ -39,12 +42,14 @@ struct DropdownMenu: View {
     
     init(
         title: String? = nil,
+        placeholder: String?,
         menuItems: [MenuItem],
         selectedItem: Binding<MenuItem?>,
         showClearButton: Bool = true,
         scrollToTopOnClear: Bool = true
     ) {
         self.title = title
+        self.placeholder = placeholder
         self.menuItems = menuItems
         self._selectedItem = selectedItem
         self.showClearButton = showClearButton
@@ -66,7 +71,7 @@ struct DropdownMenu: View {
                 SelectedItemView(
                     expanded: $expanded,
                     selectedItem: $selectedItem,
-                    placeholder: "Choose a security question"
+                    placeholder: placeholder ?? ""
                 )
                 
                 if expanded {
@@ -140,6 +145,7 @@ struct DropdownMenuLibraryContent: LibraryContentProvider {
     public var views: [LibraryItem] {
         LibraryItem(
             DropdownMenu(
+                placeholder: "Choose an option...",
                 menuItems: MenuItem.mockMenuItems,
                 selectedItem: .constant(nil)
             ),
@@ -155,6 +161,7 @@ struct DropdownMenu_Previews: PreviewProvider {
     static var previews: some View {
         DropdownMenu(
             title: "Security Question 1",
+            placeholder: "Choose a security question",
             menuItems: MenuItem.mockMenuItems,
             selectedItem: .constant(.mockMenuItem)
         )

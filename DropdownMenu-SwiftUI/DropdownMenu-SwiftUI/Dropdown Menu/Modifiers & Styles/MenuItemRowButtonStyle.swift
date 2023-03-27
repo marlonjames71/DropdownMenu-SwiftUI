@@ -9,6 +9,11 @@ import SwiftUI
 
 struct MenuItemRowButtonStyle: ButtonStyle {
     @Environment(\.iconTint) var tint: Color
+    let tintOverride: Color?
+    
+    init(tintOverride: Color? = nil) {
+        self.tintOverride = tintOverride
+    }
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -18,7 +23,7 @@ struct MenuItemRowButtonStyle: ButtonStyle {
     @ViewBuilder
     private func configurationView(_ configuration: ButtonStyleConfiguration) -> some View {
         if configuration.isPressed {
-            SelectionHighlight(color: tint)
+            SelectionHighlight(color: tintOverride ?? tint)
         }
     }
 }
