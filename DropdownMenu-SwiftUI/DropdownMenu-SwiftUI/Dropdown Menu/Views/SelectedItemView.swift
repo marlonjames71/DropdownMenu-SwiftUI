@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SelectedItemView: View {
+    
+    @Environment(\.iconTint) var iconTint: Color
+    
     @Binding var expanded: Bool
     @Binding var selectedItem: MenuItem?
+    
     var placeholder: String
     let accentColor: Color
     
@@ -36,7 +40,7 @@ struct SelectedItemView: View {
                     Image(systemName: iconName)
                         .font(.body)
                         .frame(width: 30)
-                        .foregroundColor(accentColor)
+                        .foregroundColor(iconTint)
                         .aspectRatio(1.0, contentMode: .fit)
                         .fixedSize(horizontal: true, vertical: true)
                         .transition(.opacity)

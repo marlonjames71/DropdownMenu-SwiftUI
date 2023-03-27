@@ -11,8 +11,10 @@ struct DropdownMenu: View {
     
     let title: String?
     let menuItems: [MenuItem]
+    
     @State private var expanded = false
     @Binding var selectedItem: MenuItem?
+    
     private let showClearButton: Bool
     private let scrollToTopOnClear: Bool // Completely optional
     let excludedItems: [MenuItem]
@@ -24,7 +26,7 @@ struct DropdownMenu: View {
         menuItems: [MenuItem],
         selectedItem: Binding<MenuItem?>,
         showClearButton: Bool = true,
-        scrollToTopOnClear: Bool = false,
+        scrollToTopOnClear: Bool = true,
         excludedItems: MenuItem?...
     ) {
         self.title = title
@@ -40,7 +42,7 @@ struct DropdownMenu: View {
         menuItems: [MenuItem],
         selectedItem: Binding<MenuItem?>,
         showClearButton: Bool = true,
-        scrollToTopOnClear: Bool = false
+        scrollToTopOnClear: Bool = true
     ) {
         self.title = title
         self.menuItems = menuItems

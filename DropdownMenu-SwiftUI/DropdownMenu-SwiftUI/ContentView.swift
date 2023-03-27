@@ -12,29 +12,29 @@ struct ContentView: View {
     @State private var securityQ2: MenuItem? = nil
     @State private var securityQ3: MenuItem? = nil
     
-//    let hobbyCategories: [MenuItem] = [
-//        .init(title: "Listening to Music", iconName: "headphones"),
-//        .init(title: "Going to the Movies", iconName: "ticket.fill"),
-//        .init(title: "Playing Games", iconName: "gamecontroller.fill"),
-//        .init(title: "Stand-up Comedy", iconName: "music.mic"),
-//        .init(title: "Photography", iconName: "camera.fill"),
-//        .init(title: "Reading", iconName: "books.vertical.fill"),
-//        .init(title: "Cycling", iconName: "bicycle"),
-//        .init(title: "Traveling", iconName: "tram.fill"),
-//        .init(title: "Investing", iconName: "bitcoinsign.square.fill")
-//    ]
-
     let hobbyCategories: [MenuItem] = [
-        .init(title: "Listening to Music"),
-        .init(title: "Going to the Movies"),
-        .init(title: "Playing Games"),
-        .init(title: "Stand-up Comedy"),
-        .init(title: "Photography"),
-        .init(title: "Reading"),
-        .init(title: "Cycling"),
-        .init(title: "Traveling"),
-        .init(title: "Investing"),
+        .init(title: "Listening to Music", iconName: "headphones"),
+        .init(title: "Going to the Movies", iconName: "ticket.fill"),
+        .init(title: "Playing Games", iconName: "gamecontroller.fill"),
+        .init(title: "Stand-up Comedy", iconName: "music.mic"),
+        .init(title: "Photography", iconName: "camera.fill"),
+        .init(title: "Reading", iconName: "books.vertical.fill"),
+        .init(title: "Cycling", iconName: "bicycle"),
+        .init(title: "Traveling", iconName: "tram.fill"),
+        .init(title: "Investing", iconName: "bitcoinsign.square.fill")
     ]
+
+//    let hobbyCategories: [MenuItem] = [
+//        .init(title: "Listening to Music"),
+//        .init(title: "Going to the Movies"),
+//        .init(title: "Playing Games"),
+//        .init(title: "Stand-up Comedy"),
+//        .init(title: "Photography"),
+//        .init(title: "Reading"),
+//        .init(title: "Cycling"),
+//        .init(title: "Traveling"),
+//        .init(title: "Investing"),
+//    ]
     
     // MARK: - Body
     
@@ -46,25 +46,34 @@ struct ContentView: View {
                         title: "Hobby 1",
                         menuItems: hobbyCategories,
                         selectedItem: $securityQ1,
-                        scrollToTopOnClear: true,
-                        excludedItems: securityQ1, securityQ2, securityQ3
+                        excludedItems:
+                            securityQ2,
+                            securityQ3
                     )
+                    .iconTint(.iconGreen)
                     
-                    DropdownMenu(
-                        title: "Hobby 2",
-                        menuItems: hobbyCategories,
-                        selectedItem: $securityQ2,
-                        scrollToTopOnClear: true,
-                        excludedItems: securityQ1, securityQ2, securityQ3
-                    )
+//                    DropdownMenu(
+//                        title: "Hobby 2",
+//                        menuItems: hobbyCategories,
+//                        selectedItem: $securityQ2,
+//                        excludedItems:
+//                            securityQ1,
+//                            securityQ3
+//                    )
+//                    .iconTint(.iconBlue)
+                    
+                    DropdownMenu(menuItems: hobbyCategories, selectedItem: $securityQ2)
                     
                     DropdownMenu(
                         title: "Hobby 3",
                         menuItems: hobbyCategories,
                         selectedItem: $securityQ3,
-                        scrollToTopOnClear: true,
-                        excludedItems: securityQ1, securityQ2, securityQ3
+                        excludedItems:
+                            securityQ1,
+                            securityQ2
+//                            securityQ3
                     )
+                    .iconTint(.iconPink)
                     
                     Spacer()
                 }
