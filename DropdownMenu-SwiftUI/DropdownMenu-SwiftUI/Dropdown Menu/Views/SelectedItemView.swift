@@ -17,6 +17,8 @@ struct SelectedItemView: View {
     var placeholder: String
     let accentColor: Color
     
+    let feedback = UIImpactFeedbackGenerator(style: .rigid)
+    
     // MARK: - Init
     
     init(
@@ -75,6 +77,7 @@ struct SelectedItemView: View {
                 dampingFraction: 1.0,
                 blendDuration: 0.8)
             ) {
+                feedback.impactOccurred(intensity: 0.6)
                 expanded.toggle()
             }
         }

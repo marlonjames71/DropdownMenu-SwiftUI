@@ -11,12 +11,15 @@ struct MenuItemRowButtonStyle: ButtonStyle {
     @Environment(\.iconTint) var tint: Color
     let tintOverride: Color?
     
+    let selectFeedback = UISelectionFeedbackGenerator()
+    
     init(tintOverride: Color? = nil) {
         self.tintOverride = tintOverride
     }
     
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
+        onPressFeedback(using: configuration)
+        return configuration.label
             .background(configurationView(configuration))
     }
     
@@ -24,6 +27,12 @@ struct MenuItemRowButtonStyle: ButtonStyle {
     private func configurationView(_ configuration: ButtonStyleConfiguration) -> some View {
         if configuration.isPressed {
             SelectionHighlight(color: tintOverride ?? tint)
+        }
+    }
+    
+    private func onPressFeedback(using configuration: ButtonStyleConfiguration) {
+        if configuration.isPressed {
+            selectFeedback.selectionChanged()
         }
     }
 }
