@@ -18,7 +18,9 @@ struct DropdownMenu: View {
     
     private let showClearButton: Bool
     private let scrollToTopOnClear: Bool // Completely optional
+    
     let excludedItems: [MenuItem]
+    @Environment(\.showExcludedItemsAsDisabled) var showExcluded
     
     // MARK: - Init
     
@@ -87,6 +89,8 @@ struct DropdownMenu: View {
                                 ForEach(validMenuItems) { item in
                                     MenuItemRow(item: item, selectedItem: $selectedItem)
                                         .tag(item.id)
+                                        .opacity(opacity(item: item))
+                                        .disabled(shouldDisable(item: item))
                                 }
                                 .onAppear {
                                     proxy.scrollTo(selectedItem?.id ?? .init())
@@ -130,11 +134,22 @@ struct DropdownMenu: View {
     // MARK: - Helper Methods
     
     private var validMenuItems: [MenuItem] {
+        guard !showExcluded else { return menuItems }
+        
         if excludedItems.isEmpty {
             return menuItems
         } else {
             return menuItems.filter { !excludedItems.contains($0) }
         }
+    }
+    
+    private func shouldDisable(item: MenuItem) -> Bool {
+        guard showExcluded else { return false }
+        return excludedItems.contains(item) && item != selectedItem
+    }
+    
+    private func opacity(item: MenuItem) -> Double {
+        shouldDisable(item: item) ? 0.3 : 1
     }
 }
 

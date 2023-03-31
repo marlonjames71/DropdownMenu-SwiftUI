@@ -13,6 +13,8 @@ struct MenuItemRow: View {
     @Binding var selectedItem: MenuItem?
     
     @Environment(\.iconTint) var tint: Color
+    @Environment(\.isEnabled) var isEnabled
+    @Environment(\.showExcludedItemsAsDisabled) var showExcluded
     
     // MARK: - Body
     

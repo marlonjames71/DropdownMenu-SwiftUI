@@ -18,6 +18,7 @@
 		3788FCA129C7F1CF00E7C083 /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */; };
 		3788FCA929C7F63E00E7C083 /* MenuItemRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */; };
 		3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */; };
+		37E6748A29D6832A00F752DE /* DisabledItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6748929D6832A00F752DE /* DisabledItem.swift */; };
 		37E6F25329BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */; };
 		37E6F25529BE9D7A0074937A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E6F25429BE9D7A0074937A /* ContentView.swift */; };
 		37E6F25729BE9D7B0074937A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E6F25629BE9D7B0074937A /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		3788FCA029C7F1CF00E7C083 /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRowButtonStyle.swift; sourceTree = "<group>"; };
 		3788FCAA29C7F7A700E7C083 /* SelectionHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionHighlight.swift; sourceTree = "<group>"; };
+		37E6748929D6832A00F752DE /* DisabledItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledItem.swift; sourceTree = "<group>"; };
 		37E6F24F29BE9D7A0074937A /* DropdownMenu-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DropdownMenu-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E6F25229BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu_SwiftUIApp.swift; sourceTree = "<group>"; };
 		37E6F25429BE9D7A0074937A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				3788FCA829C7F63E00E7C083 /* MenuItemRowButtonStyle.swift */,
 				3759A59029CD7E9200E888F2 /* SmoothRoundedCorners.swift */,
 				3759A59429CEA3F100E888F2 /* IconTint.swift */,
+				37E6748929D6832A00F752DE /* DisabledItem.swift */,
 			);
 			path = "Modifiers & Styles";
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				3759A58C29CD622000E888F2 /* MenuTitleView.swift in Sources */,
 				3759A58A29CD4BA800E888F2 /* SelectedItemView.swift in Sources */,
 				3788FCAB29C7F7A700E7C083 /* SelectionHighlight.swift in Sources */,
+				37E6748A29D6832A00F752DE /* DisabledItem.swift in Sources */,
 				3759A59529CEA3F100E888F2 /* IconTint.swift in Sources */,
 				37E6F25329BE9D7A0074937A /* DropdownMenu_SwiftUIApp.swift in Sources */,
 				37076D6929C0394700960770 /* DropdownMenu.swift in Sources */,

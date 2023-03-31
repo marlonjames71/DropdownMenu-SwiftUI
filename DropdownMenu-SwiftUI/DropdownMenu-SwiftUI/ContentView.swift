@@ -69,42 +69,35 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 24) {
-                    DropdownMenu(
-                        title: "Notification for Topics",
-                        placeholder: "Choose notification type",
-                        menuItems: notifications,
-//                        menuItems: hobbyCategories,
-                        selectedItem: $option1,
-                        excludedItems:
-                            option2,
-                            option3
-                    )
-                    .iconTint(.iconGreen)
-                    
-                    DropdownMenu(
-                        title: "Notification for Categories",
-                        placeholder: "Choose notification type",
-                        menuItems: notifications,
-//                        menuItems: hobbyCategories,
-                        selectedItem: $option2,
-                        excludedItems:
-                            option1,
-                            option3
-                    )
-                    .iconTint(.iconBlue)
-                                        
-                    DropdownMenu(
-                        title: "Notification for Groups",
-                        placeholder: "Choose notification type",
-                        menuItems: notifications,
-//                        menuItems: hobbyCategories,
-                        selectedItem: $option3,
-                        excludedItems:
-                            option1,
-                            option2
-//                            option3
-                    )
-                    .iconTint(.iconPink)
+                    Group {
+                        DropdownMenu(
+                            title: "Notification for Topics",
+                            placeholder: "Choose notification type",
+                            menuItems: notifications,
+                            selectedItem: $option1,
+                            excludedItems: option1, option2, option3
+                        )
+                        .iconTint(.iconGreen)
+                        
+                        DropdownMenu(
+                            title: "Notification for Categories",
+                            placeholder: "Choose notification type",
+                            menuItems: notifications,
+                            selectedItem: $option2,
+                            excludedItems: option1, option2, option3
+                        )
+                        .iconTint(.iconBlue)
+                        
+                        DropdownMenu(
+                            title: "Notification for Groups",
+                            placeholder: "Choose notification type",
+                            menuItems: notifications,
+                            selectedItem: $option3,
+                            excludedItems: option1, option2, option3
+                        )
+                        .iconTint(.iconPink)
+                    }
+                    .showExcludedItemsAsDisabled()
                     
                     Spacer()
                 }

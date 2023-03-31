@@ -18,7 +18,7 @@ extension EnvironmentValues {
     }
 }
 
-extension DropdownMenu  {
+extension View  {
     func iconTint(_ tint: Color) -> some View {
         environment(\.iconTint, tint)
     }
