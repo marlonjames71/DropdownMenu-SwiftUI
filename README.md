@@ -2,11 +2,11 @@
 DropdownMenu-SwiftUI is a SwiftUI project where we will build a beautiful dropdown menu component in SwiftUI. The component has some nice features and polished UI including:
 - Smooth and Interruptible animations
 - Can observe other dropdown menus' state
-- Nice visual slection indicator
+- Nice visual selection indicator
 - Haptic feedback
 - Custom modifiers
 - Custom color sets
-- Added as a SwiftUI Library Component
+- Add as a SwiftUI Library Component
 
 ## Screenshots
 <p align="center">
