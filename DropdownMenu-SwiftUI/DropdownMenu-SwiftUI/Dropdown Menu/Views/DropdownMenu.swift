@@ -17,10 +17,8 @@ struct DropdownMenu: View {
     @Binding var selectedItem: MenuItem?
     
     private let showClearButton: Bool
-    private let scrollToTopOnClear: Bool // Completely optional
     
     let excludedItems: [MenuItem]
-    @Environment(\.showExcludedItemsAsDisabled) var showExcluded
     
     // MARK: - Init
     
@@ -30,7 +28,6 @@ struct DropdownMenu: View {
         menuItems: [MenuItem],
         selectedItem: Binding<MenuItem?>,
         showClearButton: Bool = true,
-        scrollToTopOnClear: Bool = true,
         excludedItems: MenuItem?...
     ) {
         self.title = title
@@ -38,7 +35,6 @@ struct DropdownMenu: View {
         self.menuItems = menuItems
         self._selectedItem = selectedItem
         self.showClearButton = showClearButton
-        self.scrollToTopOnClear = scrollToTopOnClear
         self.excludedItems = excludedItems.compactMap { $0 }
     }
     
@@ -55,7 +51,6 @@ struct DropdownMenu: View {
         self.menuItems = menuItems
         self._selectedItem = selectedItem
         self.showClearButton = showClearButton
-        self.scrollToTopOnClear = scrollToTopOnClear
         self.excludedItems = []
     }
     
@@ -76,43 +71,12 @@ struct DropdownMenu: View {
                     placeholder: placeholder ?? ""
                 )
                 
-                if expanded {
-                    Divider()
-                    if validMenuItems.isEmpty {
-                        Text("No other options available")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .padding(.vertical, 6)
-                    } else {
-                        ScrollViewReader { proxy in
-                            VStack(spacing: 3) {
-                                ForEach(validMenuItems) { item in
-                                    MenuItemRow(item: item, selectedItem: $selectedItem)
-                                        .tag(item.id)
-                                        .opacity(opacity(item: item))
-                                        .disabled(shouldDisable(item: item))
-                                }
-                                .onAppear {
-                                    proxy.scrollTo(selectedItem?.id ?? .init())
-                                }
-                            }
-                            .padding(.vertical, 6)
-                            .embedInScrollView(validMenuItems.count > 4)
-                            .frame(maxHeight: validMenuItems.count < 5 ? nil : 310)
-                            .onChange(of: selectedItem) { item in
-                                // Completely optional
-                                guard expanded, scrollToTopOnClear else { return }
-                                if item == nil {
-                                    if let first = validMenuItems.first {
-                                        withAnimation {
-                                            proxy.scrollTo(first.id)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                DropdownMenuList(
+                    menuItems: menuItems,
+                    selectedItem: $selectedItem,
+                    excludedItems: excludedItems,
+                    expanded: expanded
+                )
             }
             .ignoresSafeArea(.keyboard, edges: .all)
             .background(Color.bgSecondary)
@@ -129,27 +93,6 @@ struct DropdownMenu: View {
                 }
             }
         }
-    }
-    
-    // MARK: - Helper Methods
-    
-    private var validMenuItems: [MenuItem] {
-        guard !showExcluded else { return menuItems }
-        
-        if excludedItems.isEmpty {
-            return menuItems
-        } else {
-            return menuItems.filter { !excludedItems.contains($0) }
-        }
-    }
-    
-    private func shouldDisable(item: MenuItem) -> Bool {
-        guard showExcluded else { return false }
-        return excludedItems.contains(item) && item != selectedItem
-    }
-    
-    private func opacity(item: MenuItem) -> Double {
-        shouldDisable(item: item) ? 0.3 : 1
     }
 }
 
