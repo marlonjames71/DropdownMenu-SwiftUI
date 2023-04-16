@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct IconTintKey: EnvironmentKey {
-    static var defaultValue: Color = Color.accentColor
+	static var defaultValue: Color = Color.accentColor
 }
 
 extension EnvironmentValues {
-    var iconTint: Color {
-        get { self[IconTintKey.self] }
-        set { self[IconTintKey.self] = newValue }
-    }
+	var iconTint: Color {
+		get { self[IconTintKey.self] }
+		set { self[IconTintKey.self] = newValue }
+	}
 }
 
 extension View  {
-    func iconTint(_ tint: Color) -> some View {
-        environment(\.iconTint, tint)
-    }
+	func iconTint(_ tint: Color) -> some View {
+		environment(\.iconTint, tint)
+	}
 }

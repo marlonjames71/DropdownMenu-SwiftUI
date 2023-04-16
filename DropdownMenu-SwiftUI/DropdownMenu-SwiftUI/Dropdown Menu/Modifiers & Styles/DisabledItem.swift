@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct DisabledItemKey: EnvironmentKey {
-    static var defaultValue: Bool = false
+	static var defaultValue: Bool = false
 }
 
 extension EnvironmentValues {
-    var showExcludedItemsAsDisabled: Bool {
-        get { self[DisabledItemKey.self] }
-        set { self[DisabledItemKey.self] = newValue }
-    }
+	var showExcludedItemsAsDisabled: Bool {
+		get { self[DisabledItemKey.self] }
+		set { self[DisabledItemKey.self] = newValue }
+	}
 }
 
 extension View {
-    func showExcludedItemsAsDisabled(_ show: Bool = true) -> some View {
-        environment(\.showExcludedItemsAsDisabled, show)
-    }
+	func showExcludedItemsAsDisabled(_ show: Bool = true) -> some View {
+		environment(\.showExcludedItemsAsDisabled, show)
+	}
 }

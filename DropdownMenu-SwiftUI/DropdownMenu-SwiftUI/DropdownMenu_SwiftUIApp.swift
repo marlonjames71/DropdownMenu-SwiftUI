@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct DropdownMenu_SwiftUIApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+	var body: some Scene {
+		WindowGroup {
+			ContentView()
+		}
+	}
 }

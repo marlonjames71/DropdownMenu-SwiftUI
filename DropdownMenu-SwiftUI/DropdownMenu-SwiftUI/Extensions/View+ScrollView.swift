@@ -8,13 +8,13 @@
 import SwiftUI
 
 extension View {
-    @ViewBuilder func embedInScrollView(
-        _ shouldEmbed: Bool = true,
-        axis: Axis.Set = .vertical,
-        showsIndicators: Bool = true
-    ) -> some View {
-        if shouldEmbed {
-            ScrollView(axis, showsIndicators: showsIndicators) { self }
-        } else { self }
-    }
+	@ViewBuilder func embedInScrollView(
+		_ shouldEmbed: Bool = true,
+		axis: Axis.Set = .vertical,
+		showsIndicators: Bool = true
+	) -> some View {
+		if shouldEmbed {
+			ScrollView(axis, showsIndicators: showsIndicators) { self }
+		} else { self }
+	}
 }
